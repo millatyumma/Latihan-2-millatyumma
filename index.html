@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Millaty Umma | Portofolio & Biodata</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: #fff1f5;
+            color: #4c0519;
+            background-image: 
+                radial-gradient(circle at 15% 15%, rgba(244, 114, 182, 0.28) 0%, transparent 45%),
+                radial-gradient(circle at 85% 45%, rgba(251, 113, 133, 0.25) 0%, transparent 50%),
+                radial-gradient(circle at 50% 85%, rgba(249, 168, 212, 0.32) 0%, transparent 50%);
+        }
+        .glass-panel {
+            background: rgba(255, 255, 255, 0.78);
+            backdrop-filter: blur(14px);
+            border: 1px solid rgba(244, 114, 182, 0.35);
+            box-shadow: 0 8px 30px rgba(236, 72, 153, 0.08);
+        }
+        .text-gradient {
+            background: linear-gradient(to right, #ec4899, #e11d48);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .glow-circle {
+            box-shadow: 0 0 50px rgba(236, 72, 153, 0.28);
+        }
+
+        /* SISTEM TAB MURNI CSS */
+        .tab-radio { display: none; }
+        .tab-panel { display: none; }
+        
+        #radio-journey:checked ~ .panels-wrap #panel-journey,
+        #radio-skills:checked ~ .panels-wrap #panel-skills,
+        #radio-certs:checked ~ .panels-wrap #panel-certs {
+            display: grid;
+        }
+
+        #radio-journey:checked ~ .tabs-nav label[for="radio-journey"],
+        #radio-skills:checked ~ .tabs-nav label[for="radio-skills"],
+        #radio-certs:checked ~ .tabs-nav label[for="radio-certs"] {
+            background: linear-gradient(to right, #ec4899, #f43f5e);
+            color: #ffffff;
+            border-color: #ec4899;
+            box-shadow: 0 4px 12px rgba(236, 72, 153, 0.3);
+        }
+
+        /* MODAL MURNI CSS (:target) */
+        .css-modal {
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.25s ease;
+        }
+        .css-modal:target {
+            opacity: 1;
+            pointer-events: auto;
+        }
+    </style>
+</head>
+<body class="antialiased selection:bg-pink-500 selection:text-white">
+
+    <!-- 1. NAVBAR -->
+    <header class="fixed top-0 left-0 right-0 z-40 glass-panel border-b border-pink-300/40">
+        <div class="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
+            <a href="#home" class="text-base font-extrabold tracking-tight text-pink-600 hover:text-pink-500 transition">
+                나나
+            </a>
+            <nav class="hidden md:flex items-center gap-8 text-sm font-semibold text-pink-900/80">
+                <a href="#home" class="hover:text-pink-600 transition">Home</a>
+                <a href="#about" class="hover:text-pink-600 transition">About</a>
+                <a href="#portfolio" class="hover:text-pink-600 transition">Eksplorasi & Skill</a>
+                <a href="#contact" class="hover:text-pink-600 transition">Contact</a>
+            </nav>
+            <a href="#contact" class="px-4 py-1.5 rounded-full bg-pink-500 text-white text-xs font-semibold hover:bg-pink-600 shadow-sm shadow-pink-500/30 transition">
+                Let's Talk
+            </a>
+        </div>
+        <!-- Navigasi Khusus Mobile -->
+        <nav class="flex md:hidden justify-around py-2 border-t border-pink-200 text-xs font-semibold text-pink-900/80 bg-white/90">
+            <a href="#home" class="hover:text-pink-600 transition">Home</a>
+            <a href="#about" class="hover:text-pink-600 transition">About</a>
+            <a href="#portfolio" class="hover:text-pink-600 transition">Eksplorasi & Skill</a>
+            <a href="#contact" class="hover:text-pink-600 transition">Contact</a>
+        </nav>
+    </header>
+
+    <!-- 2. HOME / HERO SECTION -->
+    <section id="home" class="min-h-screen pt-32 md:pt-28 pb-16 px-6 flex items-center">
+        <div class="max-w-6xl mx-auto w-full grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+            
+            <div class="lg:col-span-7 space-y-6">
+                <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-pink-200/60 border border-pink-300 text-pink-700 text-xs font-bold">
+                    <span class="w-2 h-2 rounded-full bg-pink-500 animate-pulse"></span>
+                    PERSONAL BIODATA 
+                </div>
+                
+                <h1 class="text-4xl sm:text-6xl font-extrabold tracking-tight leading-tight text-rose-950">
+                    Informatics <br>
+                    <span class="text-gradient">Student & Learner</span>
+                </h1>
+
+                <p class="text-rose-900/75 text-sm sm:text-base max-w-xl leading-relaxed">
+                    Mahasiswa semester 3 Program Studi Informatika di Universitas Nahdlatul Ulama Al Ghazali Cilacap. Bersemangat dalam belajar hal baru, mengembangkan antarmuka web dasar, desain kreatif, serta memiliki ketertarikan dalam bidang jaringan.
+                </p>
+
+                <div class="flex flex-wrap gap-2.5 pt-2">
+                    <span class="px-3.5 py-1.5 rounded-lg glass-panel text-xs font-semibold text-pink-700">HTML & CSS Dasar</span>
+                    <span class="px-3.5 py-1.5 rounded-lg glass-panel text-xs font-semibold text-pink-700">Canva Desain</span>
+                    <span class="px-3.5 py-1.5 rounded-lg glass-panel text-xs font-semibold text-pink-700">Cyber Security</span>
+                </div>
+            </div>
+
+            <!-- Kolom Kanan: Foto Profil -->
+            <div class="lg:col-span-5 flex justify-center">
+                <div class="relative w-72 h-72 sm:w-80 sm:h-80 rounded-3xl p-2.5 glass-panel border-2 border-pink-300 glow-circle">
+                    <img 
+                        src="Hijab Girls Flat Art Illustration PNG Images _ AI Free Download - Pikbest.jpg" 
+                        alt="Millaty Umma Hanifa" 
+                        onerror="this.onerror=null; this.src='https://ui-avatars.com/api/?name=Millaty+Umma&background=f472b6&color=ffffff&size=400&bold=true';"
+                        class="w-full h-full object-cover rounded-2xl"
+                    >
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- 3. ABOUT SECTION -->
+    <section id="about" class="py-24 px-6 border-t border-pink-300/40">
+        <div class="max-w-5xl mx-auto">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-gradient">About Me</h2>
+                <p class="text-xs sm:text-sm text-pink-700/70 font-medium mt-2"> Mengenal lebih dekat perjalanan dan impian saya </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-12 gap-10 items-center">
+                <div class="md:col-span-7 space-y-5">
+                    <h3 class="text-2xl sm:text-3xl font-extrabold leading-snug text-rose-950">
+                        안녕하세요 여러분 <br>
+                        <span class="text-pink-600">저는 나재민의 여자친구예요</span>
+                    </h3>
+                    <p class="text-rose-900/80 text-sm sm:text-base leading-relaxed">
+                        Perkenalkan, nama saya Millaty Umma Hanifa. Saya lahir di Cilacap pada tahun 2007 yang saat ini sedang menempuh pendidikan tinggi di Universitas Nahdlatul Ulama Al Ghazali Cilacap dan mengambil Program Studi Informatika.
+                    </p>
+                    <p class="text-rose-900/70 text-sm sm:text-base leading-relaxed">
+                        Saya ingin terus belajar, menambah wawasan, serta mengembangkan keterampilan khususnya di bidang teknologi dan informatika. Saya memiliki impian untuk berkeliling dunia dengan hasil kerja keras saya sendiri serta melanjutkan studi ke luar negeri.
+                    </p>
+                </div>
+
+                <div class="md:col-span-5 flex justify-center">
+                    <div class="relative w-64 h-64 sm:w-72 sm:h-72 rounded-full p-2.5 border-2 border-pink-300 glow-circle bg-gradient-to-b from-pink-300/40 to-white/60">
+                        <img 
+                            src="hijab bulat.jpg" 
+                            alt="Millaty Umma" 
+                            onerror="this.onerror=null; this.src='https://ui-avatars.com/api/?name=Millaty+Umma&background=f472b6&color=ffffff&size=400&bold=true';"
+                            class="w-full h-full object-cover rounded-full"
+                        >
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 4. JEJAK LANGKAH & KEAHLIAN SECTION -->
+    <section id="portfolio" class="py-24 px-6 border-t border-pink-300/40">
+        <div class="max-w-6xl mx-auto">
+            <div class="text-center max-w-2xl mx-auto mb-12">
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-gradient">Eksplorasi & Skill</h2>
+                <p class="text-rose-900/70 text-xs sm:text-sm mt-3 leading-relaxed">
+                    Dokumentasi proses belajar awal, tugas kuliah, serta minat dan kemampuan yang sedang saya kembangkan.
+                </p>
+            </div>
+
+            <!-- Radio Button Pengontrol Tab -->
+            <input type="radio" name="tabs" id="radio-journey" class="tab-radio" checked>
+            <input type="radio" name="tabs" id="radio-skills" class="tab-radio">
+            <input type="radio" name="tabs" id="radio-certs" class="tab-radio">
+
+            <!-- Tombol Navigasi Tab -->
+            <div class="tabs-nav grid grid-cols-3 gap-3 max-w-md mx-auto mb-12 p-1.5 rounded-2xl glass-panel">
+                <label for="radio-journey" class="py-2.5 rounded-xl text-xs sm:text-sm font-bold text-center text-pink-800 cursor-pointer transition border border-transparent">Jejak Langkah</label>
+                <label for="radio-skills" class="py-2.5 rounded-xl text-xs sm:text-sm font-bold text-center text-pink-800 cursor-pointer transition border border-transparent">Minat & Skill</label>
+                <label for="radio-certs" class="py-2.5 rounded-xl text-xs sm:text-sm font-bold text-center text-pink-800 cursor-pointer transition border border-transparent">Pencapaian</label>
+            </div>
+
+            <div class="panels-wrap">
+                
+                <!-- PANEL 1: JEJAK LANGKAH SAYA -->
+                <div id="panel-journey" class="tab-panel grid-cols-1 md:grid-cols-3 gap-6">
+                    <a href="#modal-1" class="glass-panel rounded-2xl overflow-hidden group block hover:border-pink-400 hover:-translate-y-1 transition">
+                        <div class="h-44 bg-gradient-to-br from-pink-400 to-rose-400 p-6 flex flex-col justify-center items-center text-center">
+                            <span class="text-[10px] tracking-widest uppercase text-pink-100 font-bold mb-1">BELAJAR WEB</span>
+                            <h4 class="text-lg font-extrabold text-white">LATIHAN 1 BIODATA</h4>
+                            <span class="mt-3 px-3.5 py-1 rounded-full bg-white text-pink-600 text-[10px] font-extrabold shadow-sm">LIHAT DETAIL</span>
+                        </div>
+                        <div class="p-5">
+                            <h3 class="font-bold text-rose-950 group-hover:text-pink-600 transition">Website Biodata Pertama</h3>
+                            <p class="text-xs text-rose-900/70 mt-1.5 leading-relaxed">Langkah awal belajar membuat halaman profil diri menggunakan HTML & CSS dasar.</p>
+                        </div>
+                    </a>
+
+                    <button type="button" onclick="openModal('modal-2')" class="glass-panel rounded-2xl overflow-hidden group block text-left w-full hover:border-pink-400 hover:-translate-y-1 transition cursor-pointer">
+                        <div class="h-44 bg-gradient-to-br from-fuchsia-400 to-pink-500 p-6 flex flex-col justify-center items-center text-center">
+                            <span class="text-[10px] tracking-widest uppercase text-pink-100 font-bold mb-1">KREATIVITAS</span>
+                            <h4 class="text-lg font-extrabold text-white">DESAIN & VISUALISASI</h4>
+                            <span class="mt-3 px-3.5 py-1 rounded-full bg-white text-pink-600 text-[10px] font-extrabold shadow-sm">LIHAT DETAIL</span>
+                        </div>
+                        <div class="p-5">
+                            <h3 class="font-bold text-rose-950 group-hover:text-pink-600 transition">3D Visualisasi & Desain Grafis</h3>
+                            <p class="text-xs text-rose-900/70 mt-1.5 leading-relaxed">Dokumentasi tampilan visualisasi 3D untuk Grafika & Komputasi Visual serta desain grafis.</p>
+                        </div>
+                    </button>
+
+                    <a href="#modal-3" class="glass-panel rounded-2xl overflow-hidden group block hover:border-pink-400 hover:-translate-y-1 transition">
+                        <div class="h-44 bg-gradient-to-br from-rose-400 to-pink-500 p-6 flex flex-col justify-center items-center text-center">
+                            <span class="text-[10px] tracking-widest uppercase text-pink-100 font-bold mb-1">TUGAS KULIAH</span>
+                            <h4 class="text-lg font-extrabold text-white">PRAKTIKUM</h4>
+                            <span class="mt-3 px-3.5 py-1 rounded-full bg-white text-pink-600 text-[10px] font-extrabold shadow-sm">LIHAT DETAIL</span>
+                        </div>
+                        <div class="p-5">
+                            <h3 class="font-bold text-rose-950 group-hover:text-pink-600 transition">Praktikum & Tugas Dasar</h3>
+                            <p class="text-xs text-rose-900/70 mt-1.5 leading-relaxed">Dokumentasi tugas analisis sistem dan pengenalan perangkat keras.</p>
+                        </div>
+                    </a>
+                </div>
+
+                <!-- PANEL 2: MINAT & KEMAMPUAN -->
+                <div id="panel-skills" class="tab-panel grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto">
+                    <!-- Kartu 1: Soft Skills -->
+                    <div class="glass-panel p-6 rounded-2xl space-y-4">
+                        <div class="flex items-center gap-3">
+                            <span class="w-10 h-10 rounded-xl bg-pink-100 text-pink-600 flex items-center justify-center font-bold text-lg">🤝</span>
+                            <h4 class="text-lg font-extrabold text-rose-950">Soft Skills</h4>
+                        </div>
+                        <ul class="space-y-2.5 text-xs sm:text-sm text-rose-900/80 font-medium">
+                            <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-pink-500"></span> Mudah Beradaptasi</li>
+                            <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-pink-500"></span> Kerja Sama Tim</li>
+                            <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-pink-500"></span> Komunikasi & Teliti</li>
+                        </ul>
+                    </div>
+
+                    <!-- Kartu 2: Tools Kreatif & Dasar -->
+                    <div class="glass-panel p-6 rounded-2xl space-y-4">
+                        <div class="flex items-center gap-3">
+                            <span class="w-10 h-10 rounded-xl bg-pink-100 text-pink-600 flex items-center justify-center font-bold text-lg">🎨</span>
+                            <h4 class="text-lg font-extrabold text-rose-950">Tools & Dasar</h4>
+                        </div>
+                        <ul class="space-y-2.5 text-xs sm:text-sm text-rose-900/80 font-medium">
+                            <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-pink-500"></span> Canva (Desain & Presentasi)</li>
+                            <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-pink-500"></span> MS Office (Excel Tahap Belajar) & Google Docs</li>
+                            <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-pink-500"></span> HTML & CSS (Tahap Belajar)</li>
+                            <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-pink-500"></span> CapCut (Template)</li>
+                        </ul>
+                    </div>
+
+                    <!-- Kartu 3: Bahasa & Minat -->
+                    <div class="glass-panel p-6 rounded-2xl space-y-4">
+                        <div class="flex items-center gap-3">
+                            <span class="w-10 h-10 rounded-xl bg-pink-100 text-pink-600 flex items-center justify-center font-bold text-lg">🌐</span>
+                            <h4 class="text-lg font-extrabold text-rose-950">Bahasa & Minat</h4>
+                        </div>
+                        <ul class="space-y-2.5 text-xs sm:text-sm text-rose-900/80 font-medium">
+                            <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-pink-500"></span> Bahasa Indonesia (Aktif)</li>
+                            <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-pink-500"></span> Bahasa Inggris (Dasar)</li>
+                            <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-pink-500"></span> Bahasa Korea (Tahap Belajar)</li>
+                            <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-pink-500"></span> Jaringan</li>
+                            <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-pink-500"></span> Traveling</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- PANEL 3: PENCAPAIAN & BELAJAR -->
+                <div id="panel-certs" class="tab-panel grid-cols-1 max-w-md mx-auto">
+                    <div class="glass-panel p-6 rounded-2xl space-y-3">
+                        <span class="text-xs text-pink-600 font-bold uppercase">2025 - Sekarang • Pendidikan</span>
+                        <h4 class="text-lg font-bold text-rose-950">Mahasiswa Informatika UNUGHA</h4>
+                        <p class="text-xs text-rose-900/75 leading-relaxed">Aktif menjalani perkuliahan dengan fokus awal pada pengenalan teknologi komputer dan ketertarikan di bidang keamanan jaringan.</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- 5. CONTACT SECTION -->
+    <section id="contact" class="py-20 px-6 border-t border-pink-300/40">
+        <div class="max-w-4xl mx-auto glass-panel rounded-3xl p-8 sm:p-10 space-y-8">
+            <div class="text-center space-y-3">
+                <h2 class="text-2xl sm:text-3xl font-extrabold text-rose-950">Hubungi Saya</h2>
+                <p class="text-rose-900/75 text-sm max-w-md mx-auto">
+                    Ingin berkenalan, berdiskusi seputar kuliah Informatika, atau sekadar menyapa? Kirim pesan di bawah ini atau hubungi media sosial saya.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-12 gap-8 items-start">
+                <!-- Info Kontak & Tombol Sosial Media (Kiri) -->
+                <div class="md:col-span-5 space-y-4">
+                    <div class="p-4 rounded-2xl bg-white/60 border border-pink-200 space-y-3 text-xs text-rose-900/80">
+                        <div>
+                            <span class="font-bold text-pink-600 block">📍 Lokasi</span>
+                            <span>Cilacap, Jawa Tengah, Indonesia</span>
+                        </div>
+                        <div>
+                            <span class="font-bold text-pink-600 block">🎓 Kampus</span>
+                            <span>UNUGHA Cilacap (Informatika)</span>
+                        </div>
+                        <div>
+                            <span class="font-bold text-pink-600 block">✉ Email</span>
+                            <span>millaty.255211001@mhs.unugha.ac.id</span>
+                        </div>
+                    </div>
+
+                    <div class="grid grid-cols-2 gap-2.5">
+                        <a href="https://www.instagram.com/mltyumh?fqnt=MWJvd2FoZjllZmpkZA==" target="_blank" rel="noopener noreferrer" class="p-3 rounded-xl bg-white/90 border border-pink-300 hover:border-pink-500 text-pink-700 text-xs font-bold flex items-center justify-center gap-1.5 transition">
+                            <span>📷 Instagram</span>
+                        </a>
+                        <a href="https://wa.me/6285720152192" target="_blank" rel="noopener noreferrer" class="p-3 rounded-xl bg-white/90 border border-pink-300 hover:border-pink-500 text-pink-700 text-xs font-bold flex items-center justify-center gap-1.5 transition">
+                            <span>💬 WhatsApp</span>
+                        </a>
+                        <a href="mailto:millaty.255211001@mhs.unugha.ac.id" class="col-span-2 p-3 rounded-xl bg-white/90 border border-pink-300 hover:border-pink-500 text-pink-700 text-xs font-bold flex items-center justify-center gap-1.5 transition">
+                            <span>✉ Email</span>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Formulir Kirim Pesan Langsung (Kanan) -->
+                <form action="mailto:millaty.255211001@mhs.unugha.ac.id" method="post" enctype="text/plain" class="md:col-span-7 space-y-4">
+                    <div>
+                        <label for="name" class="block text-xs font-bold text-rose-950 mb-1">Nama Kamu</label>
+                        <input type="text" id="name" name="Nama" required placeholder="Masukkan nama kamu..." class="w-full px-4 py-2.5 rounded-xl bg-white/85 border border-pink-300 focus:outline-none focus:border-pink-500 text-xs sm:text-sm text-rose-950 placeholder-pink-400">
+                    </div>
+                    <div>
+                        <label for="email" class="block text-xs font-bold text-rose-950 mb-1">Email</label>
+                        <input type="email" id="email" name="Email" required placeholder="nama@email.com" class="w-full px-4 py-2.5 rounded-xl bg-white/85 border border-pink-300 focus:outline-none focus:border-pink-500 text-xs sm:text-sm text-rose-950 placeholder-pink-400">
+                    </div>
+                    <div>
+                        <label for="message" class="block text-xs font-bold text-rose-950 mb-1">Pesan</label>
+                        <textarea id="message" name="Pesan" rows="3" required placeholder="Tulis pesan atau sapaan di sini..." class="w-full px-4 py-2.5 rounded-xl bg-white/85 border border-pink-300 focus:outline-none focus:border-pink-500 text-xs sm:text-sm text-rose-950 placeholder-pink-400"></textarea>
+                    </div>
+                    <button type="submit" class="w-full py-3 rounded-xl bg-gradient-to-r from-pink-500 to-rose-500 hover:from-pink-600 hover:to-rose-600 text-white text-xs sm:text-sm font-bold shadow-md shadow-pink-500/25 transition cursor-pointer">
+                        Kirim Pesan 💌
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="py-8 text-center text-xs text-pink-800/70 font-medium border-t border-pink-300/40">
+        © 2026 Millaty Umma Hanifa 💗
+    </footer>
+
+    <!-- MODAL POP-UP 1 -->
+    <div id="modal-1" class="css-modal fixed inset-0 z-50 flex items-center justify-center p-4 bg-pink-950/40 backdrop-blur-sm">
+        <div class="bg-white/95 max-w-xl w-full rounded-2xl p-6 sm:p-8 relative border border-pink-300 shadow-2xl">
+            <a href="#portfolio" class="absolute top-5 right-5 text-pink-400 hover:text-pink-700 text-xl font-bold">✕</a>
+            <span class="text-xs font-bold text-pink-600 uppercase tracking-wider">Jejak Belajar Web</span>
+            <h3 class="text-2xl font-extrabold text-rose-950 mt-1">Website Biodata Pertama</h3>
+            <p class="text-rose-900/80 text-sm leading-relaxed mt-4">
+                Latihan pertama membuat halaman web perkenalan diri menggunakan HTML dan CSS dasar, lalu dipublikasikan secara gratis menggunakan GitHub Pages.
+            </p>
+            <div class="mt-6 flex flex-wrap gap-2">
+                <span class="px-3 py-1 rounded-lg bg-pink-100 border border-pink-200 text-pink-700 text-xs font-semibold">HTML Dasar</span>
+                <span class="px-3 py-1 rounded-lg bg-pink-100 border border-pink-200 text-pink-700 text-xs font-semibold">CSS Dasar</span>
+                <span class="px-3 py-1 rounded-lg bg-pink-100 border border-pink-200 text-pink-700 text-xs font-semibold">GitHub Pages</span>
+            </div>
+            <div class="mt-8 pt-5 border-t border-pink-200 flex justify-end gap-3">
+                <a href="#portfolio" class="px-4 py-2 rounded-lg text-xs font-bold text-pink-700 hover:bg-pink-100">Tutup</a>
+                <a href="https://millatyumma.github.io/Latihan-1-Millatyumma/" target="_blank" rel="noopener noreferrer" class="px-5 py-2 rounded-lg bg-pink-500 hover:bg-pink-600 text-white text-xs font-bold shadow-sm">Lihat Web ↗</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- MODAL POP-UP 2 -->
+    <div id="modal-2" class="fixed inset-0 z-50 hidden items-center justify-center p-4 bg-pink-950/40 backdrop-blur-sm">
+        <div class="bg-white/95 max-w-xl w-full rounded-2xl p-6 sm:p-8 relative border border-pink-300 shadow-2xl max-h-[90vh] overflow-y-auto">
+            <button type="button" onclick="closeModal('modal-2')" class="absolute top-5 right-5 text-pink-400 hover:text-pink-700 text-xl font-bold cursor-pointer">✕</button>
+            <span class="text-xs font-bold text-pink-600 uppercase tracking-wider">Grafika & Komputasi Visual</span>
+            <h3 class="text-2xl font-extrabold text-rose-950 mt-1">3D Visualisasi & Desain Grafis</h3>
+
+            <!-- Gambar Screenshot -->
+            <div class="mt-4 rounded-xl overflow-hidden border border-pink-200 bg-pink-50/50 p-2">
+                <img src="Screenshot 2026-11-19 114248.png" alt="Screenshot Visualisasi 3D" class="w-full h-auto max-h-72 object-contain rounded-lg mx-auto">
+            </div>
+
+            <p class="text-rose-900/80 text-sm leading-relaxed mt-4">
+                Dokumentasi eksplorasi visualisasi 3D untuk mata kuliah Grafika &amp; Komputasi Visual serta latihan desain grafis dan slide presentasi.
+            </p>
+
+            <div class="mt-5 flex flex-wrap gap-2">
+                <span class="px-3 py-1 rounded-lg bg-pink-100 border border-pink-200 text-pink-700 text-xs font-semibold">3D Visualisasi</span>
+                <span class="px-3 py-1 rounded-lg bg-pink-100 border border-pink-200 text-pink-700 text-xs font-semibold">Komputasi Visual</span>
+                <span class="px-3 py-1 rounded-lg bg-pink-100 border border-pink-200 text-pink-700 text-xs font-semibold">Canva</span>
+            </div>
+
+            <div class="mt-7 pt-5 border-t border-pink-200 flex justify-end">
+                <button type="button" onclick="closeModal('modal-2')" class="px-5 py-2 rounded-lg bg-pink-500 hover:bg-pink-600 text-white text-xs font-bold shadow-sm cursor-pointer">Tutup</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- MODAL POP-UP 3 -->
+    <div id="modal-3" class="css-modal fixed inset-0 z-50 flex items-center justify-center p-4 bg-pink-950/40 backdrop-blur-sm">
+        <div class="bg-white/95 max-w-xl w-full rounded-2xl p-6 sm:p-8 relative border border-pink-300 shadow-2xl">
+            <a href="#portfolio" class="absolute top-5 right-5 text-pink-400 hover:text-pink-700 text-xl font-bold">✕</a>
+            <span class="text-xs font-bold text-pink-600 uppercase tracking-wider">Tugas & Praktikum</span>
+            <h3 class="text-2xl font-extrabold text-rose-950 mt-1">Eksplorasi Dasar Informatika</h3>
+            <p class="text-rose-900/80 text-sm leading-relaxed mt-4">
+                Kumpulan pembelajaran awal selama kuliah di Prodi Informatika, mulai dari merancang alur sistem sederhana hingga mencoba praktikum dasar mikrokontroler Arduino Uno dan Crimping kabel jaringan.
+            </p>
+            <div class="mt-6 flex flex-wrap gap-2">
+                <span class="px-3 py-1 rounded-lg bg-pink-100 border border-pink-200 text-pink-700 text-xs font-semibold">Tugas Kuliah</span>
+                <span class="px-3 py-1 rounded-lg bg-pink-100 border border-pink-200 text-pink-700 text-xs font-semibold">Belajar Dasar</span>
+                <span class="px-3 py-1 rounded-lg bg-pink-100 border border-pink-200 text-pink-700 text-xs font-semibold">Arduino Uno</span>
+            </div>
+            <div class="mt-8 pt-5 border-t border-pink-200 flex justify-end gap-3">
+                <a href="#portfolio" class="px-4 py-2 rounded-lg text-xs font-bold text-pink-700 hover:bg-pink-100">Tutup</a>
+                <a href="#modal-galeri-3" class="px-5 py-2 rounded-lg bg-pink-500 hover:bg-pink-600 text-white text-xs font-bold shadow-sm">Buka Gambar ↗</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- MODAL GALERI 3 GAMBAR BERSEBELAHAN -->
+    <div id="modal-galeri-3" class="css-modal fixed inset-0 z-50 flex items-center justify-center p-4 bg-pink-950/40 backdrop-blur-sm">
+        <div class="bg-white/95 max-w-4xl w-full rounded-2xl p-6 sm:p-8 relative border border-pink-300 shadow-2xl max-h-[90vh] overflow-y-auto">
+            <a href="#modal-3" class="absolute top-5 right-5 text-pink-400 hover:text-pink-700 text-xl font-bold">✕</a>
+            <span class="text-xs font-bold text-pink-600 uppercase tracking-wider">Dokumentasi Praktikum</span>
+            <h3 class="text-2xl font-extrabold text-rose-950 mt-1">Galeri Eksplorasi Dasar Informatika</h3>
+            <p class="text-rose-900/75 text-sm mt-2">
+                Tampilan dokumentasi praktikum.
+            </p>
+
+            <div class="mt-6 grid grid-cols-1 md:grid-cols-3 gap-4">
+                <div class="rounded-xl overflow-hidden border border-pink-200 bg-pink-50/50 p-2">
+                    <img src="WhatsApp Image 2026-11-19 at 10.59.05.jpeg" alt="Dokumentasi Praktikum 1" class="w-full h-48 object-cover rounded-lg">
+                </div>
+                <div class="rounded-xl overflow-hidden border border-pink-200 bg-pink-50/50 p-2">
+                    <img src="WhatsApp Image 2026-11-19 at 11.11.50 (1).jpeg" alt="Dokumentasi Praktikum 2" class="w-full h-48 object-cover rounded-lg">
+                </div>
+                <div class="rounded-xl overflow-hidden border border-pink-200 bg-pink-50/50 p-2">
+                    <img src="WhatsApp Image 2026-11-19 at 11.11.50.jpeg" alt="Dokumentasi Praktikum 3" class="w-full h-48 object-cover rounded-lg">
+                </div>
+            </div>
+
+            <div class="mt-8 pt-5 border-t border-pink-200 flex justify-end gap-3">
+                <a href="#modal-3" class="px-4 py-2 rounded-lg text-xs font-bold text-pink-700 hover:bg-pink-100">Kembali</a>
+                <a href="#portfolio" class="px-5 py-2 rounded-lg bg-pink-500 hover:bg-pink-600 text-white text-xs font-bold shadow-sm">Tutup</a>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function openModal(id) {
+            const modal = document.getElementById(id);
+            if (modal) {
+                modal.classList.remove('hidden');
+                modal.classList.add('flex');
+            }
+        }
+        function closeModal(id) {
+            const modal = document.getElementById(id);
+            if (modal) {
+                modal.classList.add('hidden');
+                modal.classList.remove('flex');
+            }
+        }
+    </script>
+
+</body>
+</html>
